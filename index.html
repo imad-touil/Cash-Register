@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Cash Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Local Cash Register</h1>
+        
+        <div class="product-input">
+            <input type="text" id="product-id" placeholder="Product ID">
+            <input type="number" id="quantity" placeholder="Qty" value="1" min="1">
+            <button onclick="addItem()">Add Item</button>
+        </div>
+        
+        <div class="display-area">
+            <table id="receipt-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="receipt-items">
+                    <!-- Items will be added here dynamically -->
+                </tbody>
+            </table>
+            
+            <div class="totals">
+                <p>Subtotal: $<span id="subtotal">0.00</span></p>
+                <p>Tax: $<span id="tax">0.00</span></p>
+                <p>Total: $<span id="total">0.00</span></p>
+            </div>
+            
+            <button onclick="completeSale()" class="complete-btn">Complete Sale</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
